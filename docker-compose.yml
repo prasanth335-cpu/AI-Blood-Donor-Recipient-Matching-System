@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: aegis_db
+    restart: always
+    environment:
+      POSTGRES_DB: maintenance_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    container_name: aegis_backend
+    restart: always
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/maintenance_db
+      - JWT_SECRET=production-secret-jwt-key-for-industrial-predictive-maintenance
+      - ADMIN_EMAIL=admin@factory.com
+      - ADMIN_PASSWORD=AdminPassword123!
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/frontend.Dockerfile
+    container_name: aegis_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

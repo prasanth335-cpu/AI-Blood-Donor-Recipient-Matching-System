@@ -1,0 +1,139 @@
+/* ==========================================================================
+   Infosys Sales Management System - Custom CSS Styling
+   Aesthetics: Modern Clean Design, Glassmorphism & Vibrant Gradients
+   ========================================================================== */
+
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --emerald-color: #10b981;
+    --emerald-hover: #059669;
+    --dark-bg: #0f172a;
+    --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: #f8fafc;
+    color: #334155;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Gradients */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+}
+
+.bg-gradient-indigo {
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+}
+
+.bg-gradient-teal {
+    background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+}
+
+.bg-gradient-blue {
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+}
+
+.bg-gradient-purple {
+    background: linear-gradient(135deg, #9333ea 0%, #c084fc 100%);
+}
+
+.bg-emerald-subtle {
+    background-color: #ecfdf5 !important;
+}
+
+.border-emerald {
+    border-color: #10b981 !important;
+}
+
+.text-emerald {
+    color: #059669 !important;
+}
+
+.btn-emerald {
+    background-color: #10b981;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-emerald:hover {
+    background-color: #059669;
+    color: #ffffff;
+}
+
+/* Brand styling */
+.brand-icon {
+    width: 34px;
+    height: 34px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+/* Stat Cards */
+.card-stat {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-stat:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15) !important;
+}
+
+.stat-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+}
+
+/* Table Styling */
+.custom-sales-table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.custom-sales-table thead th {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-bottom: none;
+}
+
+.custom-sales-table tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+.custom-sales-table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+.custom-sales-table td {
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+/* Typography & Helpers */
+.fs-7 {
+    font-size: 0.85rem;
+}
+
+.fw-extrabold {
+    font-weight: 800;
+}
+
+.max-w-md {
+    max-width: 28rem;
+}
